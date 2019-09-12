@@ -1,68 +1,60 @@
-## Objectifs ##
+## Objectifs
 
 * Savoir ce qu'est une base de données, un SGBD, un SGBDR, comment y sont représentées les données
 * Connaître les principaux SGBD du marché
 * Etre capable de modéliser un problème en utilisant le formalisme UML
 * Savoir ce qu'est le language SQL et à quoi il sert
 
+# Les bases de données
 
-# Les bases de données #
-
-## Définitions (1/3) ##
+## Définitions (1/3)
 
 * Qu'est ce qu'une base de données (BDD) ?
 
-
-## Définitions (2/3) ##
+## Définitions (2/3)
 
 * BDD = boîte qui contient des données ?
 * Problèmes :
-	* Un fichier texte est une BDD ?
-	* Comment faire si le fichier contient énormément de données (plusieurs To) ?
-	* Besoin d'outils pour de recherche, insertion, modification...
+  * Un fichier texte est une BDD ?
+  * Comment faire si le fichier contient énormément de données (plusieurs To) ?
+  * Besoin d'outils pour de recherche, insertion, modification...
 
-
-## Définitions (3/3) ##
+## Définitions (3/3)
 
 > Une **base de données** est un ensemble de données qui sont stockées sur un support informatique, et structurées de manière à pouvoir facilement consulter et modifier leur contenu.
 
-
-## SGBD ##
+## SGBD
 
 * **SGBD** : Système de Gestion de Base de Données
 
 > Le SGBD est le logiciel destiné au stockage et à la manipulation de bases de données.
 
-
-## Pourquoi un SGBD ? ##
+## Pourquoi un SGBD ?
 
 * Accès disques fréquents et *lents*
 * Actions aboutissant à des incohérences
 * SGBD => chaque utilisateur a l'impression d'être le seul à travailler sur le système
 
-
-## Acteurs des SGBD ##
+## Acteurs des SGBD
 
 * Différents profils d'utilisateurs
-	* Administrateur
-	* Programmeur
-	* Utilisateur avec outil informatique
-	* Utilisateur sans outil informatique
+  * Administrateur
+  * Programmeur
+  * Utilisateur avec outil informatique
+  * Utilisateur sans outil informatique
 
-
-## Fonctionnalités d'un SGBD ##
+## Fonctionnalités d'un SGBD
 
 * Fonctionnalités attendues :
-	* indépendances données / applications
-	* consultation et modification des données
-	* définition des schémas de données
-	* stockage sur un support physique
-	* sécurisation des accès
-	* résolution des problèmes d'accès multiples
-	* reprises sur incident
+  * indépendances données / applications
+  * consultation et modification des données
+  * définition des schémas de données
+  * stockage sur un support physique
+  * sécurisation des accès
+  * résolution des problèmes d'accès multiples
+  * reprises sur incident
 
-
-## Notion de transation ##
+## Notion de transation
 
 > Une **transaction** est une séquence d'actions sur une base de données.
 
@@ -70,24 +62,21 @@
 * Etat final cohérent
 * Contraintes d'intégrité
 
-
-## Propriétés ACID ##
+## Propriétés ACID
 
 * 4 propriétés assurant la fiabilité des transactions :
-	* Atomicité : une transaction est un ensemble d'instructions indivisibles
-	* Cohérence : une transaction ne peut amener à violer une des contraintes de la base
-	* Isolation : deux transactions concurrentes ne peuvent intéragir entre elles
-	* Durabilité : si une panne survient pendant une transaction, l'ensemble de la transaction doit être annulée
+  * Atomicité : une transaction est un ensemble d'instructions indivisibles
+  * Cohérence : une transaction ne peut amener à violer une des contraintes de la base
+  * Isolation : deux transactions concurrentes ne peuvent intéragir entre elles
+  * Durabilité : si une panne survient pendant une transaction, l'ensemble de la transaction doit être annulée
 
-
-## Ordonnancement des transactions ##
+## Ordonnancement des transactions
 
 ![Exécutions concurrentes](img/concurrence_transactions.png)
 
+# Utilisation des SGBD
 
-# Utilisation des SGBD #
-
-## Historique ##
+## Historique
 
 * 1956 : premier disque dur
 * 1964 : apparition du concept de base de données
@@ -99,16 +88,14 @@
 * 1975 : modèle entité-association
 * 1977 : fondation de la société Oracle
 
-
-## Aujourd'hui ##
+## Aujourd'hui
 
 * Multiplication des besoins et des données
-	* base de données réparties (1989)
-	* base de données orientées objets (1990)
-	* NoSQL (1998)
+  * base de données réparties (1989)
+  * base de données orientées objets (1990)
+  * NoSQL (1998)
 
-
-## Utilisateurs de SGBD ##
+## Utilisateurs de SGBD
 
 * Banques
 * Sites web marchands
@@ -117,26 +104,24 @@
 * Producteurs de données
 * ...
 
-## Les marché des SGBD ##
+## Les marché des SGBD
 
 ![Logos de SGBD du marché](img/logos_sgbd.png)
 
+# Modélisation des données
 
-# Modélisation des données #
-
-## Cycle de vie d'un SGBD ##
+## Cycle de vie d'un SGBD
 
 1. Conception
-	* description du besoin => *modèle conceptuel*
+   * description du besoin => *modèle conceptuel*
 2. Implémentation
-	* traduction du modèle dans le SGBD => *modèle logique*
+   * traduction du modèle dans le SGBD => *modèle logique*
 3. Utilisation
-	* interrogations, mises à jours
+   * interrogations, mises à jours
 4. Maintenance
-	* corrections, évolutions
+   * corrections, évolutions
 
-
-## Les différents types de modèles ##
+## Les différents types de modèles
 
 * Hiérarchique 
 
@@ -146,34 +131,33 @@
 
 ![SGBD réseau](img/modele_reseau.png)
 
-## Les différents types de modèles ##
+## Les différents types de modèles
 
 * Relationnel 
 
 ![SGBD relationnel](img/modele_relationnel.png)
 
-## Les différents types de modèles ##
+## Les différents types de modèles
 
 * Orienté colonne
 
 ![SGBD orienté colonne](img/modele_oriente_colonne.png)
 
-## Les différents types de modèles ##
+## Les différents types de modèles
 
 * Orientée document
 
 ![SGBD orienté document](img/modele_oriente_document.png)
 
-## Les différents types de modèles ##
+## Les différents types de modèles
 
 * Graphe 
 
 ![SGBD graphe](img/modele_graphe.png)
 
+# Le modèle relationnel
 
-# Le modèle relationnel #
-
-## Généralités ##
+## Généralités
 
 * Créé par Codd en 1970
 * Repose sur la théorie mathématique des ensembles
@@ -181,82 +165,72 @@
 * **SGBDR** = SGBD Relationnel
 * Données de la base de données contenues dans des *relations*
 
-
-## Exemples de SGBDR ##
+## Exemples de SGBDR
 
 ![Logos des principaux SGBD relationnels](img/logos_sgbdr.png)
 
-
-## Les relations ##
+## Les relations
 
 > Une **relation**, ou *table*, est un ensemble de données relatives au même sujet.
 
 * Sorte de contrat sur la forme attendue des données
 * Relations représentées sour forme de tables : en-tête + lignes
 
-
-## Les colonnes ##
+## Les colonnes
 
 > La **colonne** est le constituant de la relation.
 
 * 1 colonne = 1 *nom* + 1 *domaine*
 * **Domaine** : contrainte sur le contenu de la colonne
-	* type (texte, nombre, etc.)
-	* longueur (20 caractères, 32 bits, etc.)
-	* règles (non nul, inférieur à 10, etc.)
+  * type (texte, nombre, etc.)
+  * longueur (20 caractères, 32 bits, etc.)
+  * règles (non nul, inférieur à 10, etc.)
 
-
-## Exemple ##
+## Exemple
 
 * La relation VILLE contient trois colonnes nommées :
-	* NOM
-	* CODE_POSTAL
-	* POPULATION
+  * NOM
+  * CODE_POSTAL
+  * POPULATION
 * La représentation classique de la relation est : 
-	* VILLE(NOM, CODE_POSTAL, POPULATION)
+  * VILLE(NOM, CODE_POSTAL, POPULATION)
 
-
-## Exemple ##
+## Exemple
 
 * Le domaine de la colonne NOM est le suivant :
-	* Type : texte
-	* Longueur : 100 caractères
-	* Les caractères autorisés sont les suivants : 0-9, a-z, A-Z, caractères accentuées, espace, "- / ' &"
-	* Valeur nulle non autorisée
-	* Pas de valeur par défaut
+  * Type : texte
+  * Longueur : 100 caractères
+  * Les caractères autorisés sont les suivants : 0-9, a-z, A-Z, caractères accentuées, espace, "- / ' &"
+  * Valeur nulle non autorisée
+  * Pas de valeur par défaut
 
-
-## Exemple ##
+## Exemple
 
 * Le domaine de la colonne CODE_POSTAL est le suivant :
-	* Type : texte
-	* Longueur : 5 caractères
-	* Les deux premiers chiffres doivent correspondre à un numéro de département
-	* Valeur nulle non autorisée
-	* Pas de valeur par défaut
+  * Type : texte
+  * Longueur : 5 caractères
+  * Les deux premiers chiffres doivent correspondre à un numéro de département
+  * Valeur nulle non autorisée
+  * Pas de valeur par défaut
 
-
-## Exemple ##
+## Exemple
 
 * Le domaine de la colonne POPULATION est le suivant :
-	* Type : nombre entier
-	* Longueur : 32 bits (*valeur max = 4 294 967 295*)
-	* Valeur nulle par défaut
+  * Type : nombre entier
+  * Longueur : 32 bits (*valeur max = 4 294 967 295*)
+  * Valeur nulle par défaut
 
-
-## Exemple ##
+## Exemple
 
 Table VILLE
 
-| NOM              | CODE_POSTAL | POPULATION  |
-|:-----------------|:-----------:|------------:|
-| Paris            | 75000       | 2229621     |
-| Champs-sur-Marne | 77420       | 24913       |
-| Ajaccio          | 2A004       | 67507       |
+| NOM              | CODE_POSTAL | POPULATION |
+|:---------------- |:-----------:| ----------:|
+| Paris            | 75000       | 2229621    |
+| Champs-sur-Marne | 77420       | 24913      |
+| Ajaccio          | 2A004       | 67507      |
 
-  
-
-## Les types de données dans PostgreSQL ##
+## Les types de données dans PostgreSQL
 
 <http://docs.postgresql.fr/9.2/datatype.html>
 
@@ -270,125 +244,115 @@ Table VILLE
 * Adresse réseau : IPv4, IPv6 et MAC. types cidr, inet (7 ou 9 octets) et macaddr (6 octets)
 * Types composites : listes de types simples (*peu recommandés*) 
 
-
-## Les liens entre relations ##
+## Les liens entre relations
 
 * Opérations possibles entre relations :
-	* Union
-	* Intersection
-	* Différence
-	* Produit cartésien
-	* Sélection
-	* Projection
-	* Renommage
-	* Jointure
+  * Union
+  * Intersection
+  * Différence
+  * Produit cartésien
+  * Sélection
+  * Projection
+  * Renommage
+  * Jointure
 
-
-## L'union ##
+## L'union
 
 * Réunit dans une même relation les éléments communs des deux relations initiales
 
 ![Union de deux relations](img/op_union.png)
 
-## L'intersection ##
+## L'intersection
 
 * Réunit dans une relation les éléments qui sont dans les deux relations initiales
 
 ![Intersection de deux relations](img/op_intersection.png)
 
-## La différence ##
+## La différence
 
 * Réunit dans une relation les éléments d'une relation donnée qui ne se trouvent pas dans une autre
 
 ![Différence entre deux relations](img/op_difference.png)
 
-## Le produit cartésien ##
+## Le produit cartésien
 
 * Combine dans une relation les éléments de relations en entrée
 
 ![Produit cartésien de deux relations](img/op_produit_cartesien.png)
 
-## La sélection ##
+## La sélection
 
 * Sélectionne les éléments d'une relation répondant à une condition
 
 ![Sélection dans une relation](img/op_selection.png)
 
-## La projection ##
+## La projection
 
 * Crée une nouvelle relation contenant l'ensemble des lignes d'une relation initiale, mais en ne conservant que certaines colonnes
 
 ![Projection dans une relation](img/op_projection.png)
 
-## Le renommage ##
+## Le renommage
 
 * Renomme une colonne dans une relation
 
 ![Renommage dans une relation](img/op_renommage.png)
 
-## La jointure ##
+## La jointure
 
 * Composition des éléments de deux relations répondant à un critère de jointure
 
 ![Jointure entre deux relations](img/op_jointure.png)
 
-
-## Clés et liens entre relations (1/2) ##
+## Clés et liens entre relations (1/2)
 
 > Une **clé primaire** est une colonne, ou un groupe de colonnes, permettant d'identifier de manière unique une ligne.
-
+> 
 > Une **clé étrangère** est utilisée pour lier des relations entre elles. Elle fait référence à une clé primaire d'une autre relation.
 
-
-## Clés et liens entre relations (2/2) ##
+## Clés et liens entre relations (2/2)
 
 * Différents types de liens possibles :
-	* **1-1** : *un pays a une capitale, et une capitale est dans un seul pays*
-	* **1-N** : *un pays possède plusieurs villes, mais une ville n'est que dans un seul pays*
-	* **N-M** : *un pays possède des frontières et ces frontières concernent plusieurs pays*
+
+  * **1-1** : *un pays a une capitale, et une capitale est dans un seul pays*
+  * **1-N** : *un pays possède plusieurs villes, mais une ville n'est que dans un seul pays*
+  * **N-M** : *un pays possède des frontières et ces frontières concernent plusieurs pays*
 
 * **Cardinalité** d'un lien
 
-
-## Exercice ##
+## Exercice
 
 Exercice - clés primaire et étrangères
 
+# UML
 
-
-# UML #
-
-## Problématique ##
+## Problématique
 
 * Comment établir le modèle conceptuel d'une BDD relationnelle ?
-	* outils ?
-	* méthodologie ?
-	* ... ?
+  * outils ?
+  * méthodologie ?
+  * ... ?
 
-
-## Problématique ##
+## Problématique
 
 * [x] décrire une relation (*Relation(Colonne1, Colonne2...)*)
 * [x] décrire un domaine de manière textuelle (*Colonne1 est de type entier, la valeur doit être multiple de 3...*)
 * [ ] le faire pour un ensemble de tables de manière concise
 
-
-## Présentation d'UML (1/2) ##
+## Présentation d'UML (1/2)
 
 * UML = Unified Modeling Language
 * Utilisé pour tous les aspects de la conception de projets informatiques
 * Langage graphique, normalisé, interprétable par un ordinateur
 
-
-## Présentation d'UML (2/2) ##
+## Présentation d'UML (2/2)
 
 * Actuellement en version 2
 * 14 diagrammes :
 
 ![Diagrammes UML](img/14_diagrammes_UML.png)
 
-
-## Diagramme de classe ##
+## Diagramme de classe
 
 * *Diagramme de base de données*
 * Relation représentée sous forme d'un rectangle constitué de deux cases
@@ -397,13 +361,11 @@ Exercice - clés primaire et étrangères
 * Syntaxe pour une colonne : `nom_colonne: type(longueur)`
 * Contraintes particulières sur une colonne ajoutées sous forme de notes
 
-
-## Exemple ##
+## Exemple
 
 ![Diagramme UML de BDD](img/diag_ville_personne.png)
 
-
-## Différents types de liens ##
+## Différents types de liens
 
 * Lien simple
 * Agrégation
@@ -411,14 +373,11 @@ Exercice - clés primaire et étrangères
 
 ![Agrégation et composition](img/uml_composition_agregation.png)
 
-
-## Exercice ##
+## Exercice
 
 * Massifs montagneux
 * Association de randonneurs
 
+# Le langage SQL
 
-# Le langage SQL #
-
-## Motivations / Problématique ##
-
+## Motivations / Problématique
