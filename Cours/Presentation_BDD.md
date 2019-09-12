@@ -1,9 +1,3 @@
-% Bases de données et modélisation
-% Division des enseignements en informatique
-% 2016
-
-
-
 ## Objectifs ##
 
 * Savoir ce qu'est une base de données, un SGBD, un SGBDR, comment y sont représentées les données
@@ -415,7 +409,7 @@ Exercice - clés primaire et étrangères
 * Agrégation
 * Composition
 
-![Agrégation et composition](img/composition_agregation.png)
+![Agrégation et composition](img/uml_composition_agregation.png)
 
 
 ## Exercice ##
