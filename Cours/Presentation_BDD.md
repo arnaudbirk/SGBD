@@ -375,7 +375,7 @@ Exercice - clés primaire et étrangères
 
 ## Exercice
 
-* Massifs montagneux
+* Compagnie aériennes
 * Association de randonneurs
 
 # Le langage SQL
