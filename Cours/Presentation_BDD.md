@@ -123,33 +123,25 @@
 
 ## Les différents types de modèles
 
-* Hiérarchique 
+* Hiérarchique : les données sont classées hiérarchiquement, selon une arborescence descendante. Ce modèle utilise des pointeurs entre les différents enregistrements. Il s'agit du premier modèle de SGBD.
 
 ![SGBD hiérarchique](img/modele_hierarchique.png)
 
-* Réseau 
+* Réseau : comme le modèle hiérarchique ce modèle utilise des pointeurs vers des enregistrements. Toutefois la structure n'est plus forcément arborescente dans le sens descendant.
 
 ![SGBD réseau](img/modele_reseau.png)
 
-## Les différents types de modèles
-
-* Relationnel 
+* Relationnel : Les données sont enregistrées dans des tableaux à deux dimensions (lignes et colonnes). La manipulation de ces données se fait selon la théorie mathématique des relations. 
 
 ![SGBD relationnel](img/modele_relationnel.png)
-
-## Les différents types de modèles
 
 * Orienté colonne
 
 ![SGBD orienté colonne](img/modele_oriente_colonne.png)
 
-## Les différents types de modèles
-
 * Orientée document
 
 ![SGBD orienté document](img/modele_oriente_document.png)
-
-## Les différents types de modèles
 
 * Graphe 
 
