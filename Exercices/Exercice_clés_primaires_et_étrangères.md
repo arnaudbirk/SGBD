@@ -27,9 +27,4 @@ Soit les relations Ville et Personne suivantes :
   2. Comment traduire le fait qu'une personne est née dans une ville (mais plusieurs personnes
 
      peuvent naître dans la même ville) ?
-  3. Comment traduire le fait qu'une personne peut posséder des logements dans différentes
-
-     villes ?
-  4. La relation Calendrier(JOUR, SAINT) associe un saint à chacun des jours de l'année. Comment
-
-     la lier à la relation Personne ?
+  3. Comment traduire le fait qu'une personne peut posséder des logements dans différentes villes ?
