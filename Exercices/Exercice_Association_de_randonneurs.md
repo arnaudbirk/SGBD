@@ -6,7 +6,6 @@ tels que :
 
 * le temps et la difficulté du parcours
 * le fait de vouloir faire une boucle ou non
-* la zone géographique
 * les possibilités d'hébergement.
 
 Une randonnée est décrite sous forme d'étapes qui sont caractérisées par les points suivants :
@@ -17,7 +16,6 @@ Une randonnée est décrite sous forme d'étapes qui sont caractérisées par le
 * Une description textuelle de l'étape (chemins à emprunter, difficultés particulières, etc.) sous forme d'un court paragraphe.
 * éventuellement, des informations sur ce que l'on peut trouver à proximité de l'étape, notamment en termes de ravitaillement ou de logement.
 
-Bien sûr, pour chaque étape, le futur randonneur peut accéder à une carte de l'itinéraire sur un fond de plan IGN au 1/25000ème. De même, pour la randonnée complète, un assemblage des cartes des étapes, où sont ajoutées la localisation des lieux remarquables (numéro correspondant au numéro d'étape), est disponible.
 L'association dispose également d'une liste d'hébergements avec les commentaires nominatifs des adhérents y ayant déjà séjourné et une idée des prix pratiqués.
 
 ### Question
