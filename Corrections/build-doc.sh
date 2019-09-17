@@ -1,0 +1,3 @@
+pandoc -s -o Correction_Association_de_randonneurs.pdf Correction_Association_de_randonneurs.md
+pandoc -s -o Correction_clés_primaires_et_étrangères.pdf Correction_clés_primaires_et_étrangères.md
+pandoc -s -o Correction_Compagnie_aérienne.pdf Correction_Compagnie_aérienne.md
