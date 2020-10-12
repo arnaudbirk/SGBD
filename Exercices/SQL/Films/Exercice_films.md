@@ -1,7 +1,5 @@
 # Films
 
-
-
 ## Selection
 
 1. Tous les titres de films.
@@ -28,6 +26,14 @@
 8. Dans quels films le metteur en scène a-t-il le même prénom que l’un des interprètes ? (titre, nom
    du metteur en scène, nom de l’interprète). Le metteur en scène et l’interprète ne doivent pas être la
    même personne.
+
+## Insertion, Modification, Suppresion
+
+1. Insérez 2 films de votre choix
+
+2. Modifier la date de sortie ainsi que le genre du film que vous venez d'inserez
+
+3. Supprimer ce nouveau film
 
 ## Requêtes imbriquées
 
