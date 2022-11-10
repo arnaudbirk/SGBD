@@ -248,13 +248,13 @@ Table VILLE
   * Renommage
   * Jointure
 
-## L'union
+## L'intersection
 
 * Réunit dans une même relation les éléments communs des deux relations initiales
 
 ![Union de deux relations](img/op_union.png)
 
-## L'intersection
+## L'union
 
 * Réunit dans une relation les éléments qui sont dans les deux relations initiales
 
