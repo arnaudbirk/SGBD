@@ -68,17 +68,96 @@ FROM A
 INNER JOIN B ON A.key = B.key
 ```
 
+**Exemple**
+
+Imaginons une application qui possède une table utilisateur ainsi qu’une table commande qui contient toutes les commandes effectuées par les utilisateurs.
+
+**Table utilisateur**
+
+|id|prenom|nom|email|ville|
+| :------- |:----------:|:---------:|:---------:|-----:|
+|1|Aimée|Marechal|aime.marechal@example.com|Paris|
+|2|Esmée|Lefort|esmee.lefort@example.com|Lyon|
+|3|Marine|Prevost|m.prevost@example.com|Lille|
+|4|Luc|Rolland|lucrolland@example.com|Marseille|
+
+**Tdmande :
+
+|utilisateur_id|date_achat|num_facture|prix_total|
+| :------- |:----------:|:---------:|-----:|
+|1|2013-01-23|A00103|203.14|
+|1|2013-02-14|A00104|124.00|
+|2|2013-02-17|A00105|149.45|
+|2|2013-02-21|A00106|235.35|
+|5|2013-03-02|A00107|47.58|
+
+Pour afficher toutes les commandes associées aux utilisateurs, il est possible d’utiliser la requête suivante :
+
+``` sql
+SELECT id, prenom, nom, date_achat, num_facture, prix_total
+FROM utilisateur
+INNER JOIN commande ON utilisateur.id = commande.utilisateur_id
+```
+
+#### Résultats :
+
+|id|prenom|nom|date_achat|num_facture|prix_total|
+|:------- |:----------:|:---------:|:---------:|:---------:|-----:|
+|1|Aimée|Marechal|2013-01-23|A00103|203.14|
+|1|Aimée|Marechal|2013-02-14|A00104|124.00|
+|2|Esmée|Lefort|2013-02-17|A00105|149.45|
+|2|Esmée|Lefort|2013-02-21|A00106|235.35|
+
 ### LEFT JOIN
 
 ![Jointure gauche (LEFT JOINT)](img/join_left.png)
-
-
 
 ```sql
 SELECT *
 FROM A
 LEFT JOIN B ON A.key = B.key
 ```
+#### Exemple
+
+Imaginons une application contenant des utilisateurs et des commandes pour chacun de ces utilisateurs. La base de données de cette application contient une table pour les utilisateurs et sauvegarde leurs achats dans une seconde table. Les 2 tables sont reliées grâce à la colonne utilisateur_id de la table des commandes. Cela permet d’associer une commande à un utilisateur.
+
+#### Table utilisateur :
+
+|id|prenom|nom|email|ville|
+|:------- |:----------:|:---------:|:---------:|-----:|
+|1|Aimée|Marechal|aime.marechal@example.com|Paris|
+|2|Esmée|Lefort|esmee.lefort@example.com|Lyon|
+|3|Marine|Prevost|m.prevost@example.com|Lille|
+|4|Luc|Rolland|lucrolland@example.com|Marseille|
+
+#### Table commande :
+
+|utilisateur_id|date_achat|num_facture|prix_total|
+| :------- |:----------:|:---------:|-----:|
+|1|2013-01-23|A00103|203.14|
+|1|2013-02-14|A00104|124.00|
+|2|2013-02-17|A00105|149.45|
+|2|2013-02-21|A00106|235.35|
+|5|2013-03-02|A00107|47.58|
+
+Pour lister tous les utilisateurs avec leurs commandes et afficher également les utilisateurs qui n’ont pas effectuées d’achats, il est possible d’utiliser la requête suivante:
+
+```
+SELECT *
+FROM utilisateur
+LEFT JOIN commande ON utilisateur.id = commande.utilisateur_id
+```
+
+#### Résultats :
+
+|id|prenom|nom|date_achat|num_facture|prix_total|
+|:------- |:----------:|:---------:|:---------:|:---------:|-----:|
+|1|Aimée|Marechal|2013-01-23|A00103|203.14|
+|1|Aimée|Marechal|2013-02-14|A00104|124.00|
+|2|Esmée|Lefort|2013-02-17|A00105|149.45|
+|2|Esmée|Lefort|2013-02-21|A00106|235.35|
+|3|Marine|Prevost|NULL|NULL|NULL|
+|4|Luc|Rolland|NULL|NULL|NULL|
 
 ### LEFT JOIN (sans l’intersection de B)
 
