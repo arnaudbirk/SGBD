@@ -81,7 +81,7 @@ Imaginons une application qui possède une table utilisateur ainsi qu’une tabl
 |3|Marine|Prevost|m.prevost@example.com|Lille|
 |4|Luc|Rolland|lucrolland@example.com|Marseille|
 
-**Tdmande :
+**Table commande**
 
 |utilisateur_id|date_achat|num_facture|prix_total|
 | :------- |:----------:|:---------:|-----:|
@@ -99,7 +99,7 @@ FROM utilisateur
 INNER JOIN commande ON utilisateur.id = commande.utilisateur_id
 ```
 
-#### Résultats :
+**Résultats**
 
 |id|prenom|nom|date_achat|num_facture|prix_total|
 |:------- |:----------:|:---------:|:---------:|:---------:|-----:|
@@ -172,6 +172,22 @@ LEFT JOIN B ON A.key = B.key
 WHERE B.key IS NULL
 ```
 
+**Exemple**
+
+``` sql
+SELECT id, prenom, nom, utilisateur_id
+FROM utilisateur
+LEFT JOIN commande ON utilisateur.id = commande.utilisateur_id
+WHERE utilisateur_id IS NULL
+```
+
+**Résultats**
+
+|id|prenom|nom|utilisateur_id|
+|:---:|:---:|:---:|:---:|
+|3|Marine|Prevost|NULL|
+|4|Luc|Rolland|NULL|
+
 ### RIGHT JOIN
 
 ![Jointure droite (RIGHT JOINT)](img/join_right_2.png)
@@ -188,7 +204,7 @@ RIGHT JOIN B ON A.key = B.key
 
 
 
-```sql
+``` sql
 SELECT *
 FROM A
 RIGHT JOIN B ON A.key = B.key
