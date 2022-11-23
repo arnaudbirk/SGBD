@@ -37,12 +37,13 @@
 
 ## Requêtes imbriquées
 
-1. Les requêtes suivantes peuvent s’exprimer avec une imbrication des clauses SELECT, mais on peut
-   également utiliser des jointures comme dans la partie précédente. Si le cœur vous en dit, essayez les
-   deux versions.
-2. Donnez le titre et année des films qui ont le même genre que Matrix.
-3. Donnez les nom et prénom des acteurs qui ont mis en scène un film.
-4. Donnez le nom des internautes qui ont noté le film Alien. Donnez ensuite également la note.
+Les requêtes suivantes peuvent s’exprimer avec une imbrication des clauses SELECT, mais on peut
+également utiliser des jointures comme dans la partie précédente. Si le cœur vous en dit, essayez les
+deux versions.
+
+1. Donnez le titre et année des films qui ont le même genre que Matrix.
+2. Donnez les nom et prénom des acteurs qui ont mis en scène un film.
+3. Donnez le nom des internautes qui ont noté le film Alien. Donnez ensuite également la note.
 
 ## Négation
 
