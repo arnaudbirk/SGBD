@@ -332,8 +332,6 @@ Il existe plusieurs fonctions qui peuvent être utilisées pour manipuler plusie
 
 La clause LIMIT est à utiliser dans une requête SQL pour spécifier le nombre maximum de résultats que l’ont souhaite obtenir. Cette clause est souvent associé à un OFFSET, c’est-à-dire effectuer un décalage sur le jeu de résultat. Ces 2 clauses permettent par exemple d’effectuer des système de pagination (exemple : récupérer les 10 articles de la page 4).
 
-**ATTENTION** : selon le système de gestion de base de données, la syntaxe ne sera pas pareil. Ce tutoriel va donc présenter la syntaxe pour MySQL et pour PostgreSQL.
-Syntaxe simple
 
 La syntaxe commune aux principales système de gestion de bases de données est la suivante :
 
@@ -346,6 +344,20 @@ LIMIT 10
 Cette requête permet de récupérer seulement les 10 premiers résultats d’une table. Bien entendu, si la table contient moins de 10 résultats, alors la requête retournera toutes les lignes.
 
 Bon à savoir : la bonne pratique lorsque l’ont utilise LIMIT consiste à utiliser également la clause ORDER BY pour s’assurer que quoi qu’il en soit ce sont toujours les bonnes données qui sont présentées. En effet, si le système de tri est non spécifié, alors il est en principe inconnu et les résultats peuvent être imprévisible.
+
+## Limit et Offset
+
+L’offset est une méthode simple de décaler les lignes à obtenir. La syntaxe pour utiliser une limite et un offset est la suivante :
+
+``` sql
+SELECT *
+FROM table
+LIMIT 10 OFFSET 5
+```
+
+Cette requête permet de récupérer les résultats 6 à 15 (car l’OFFSET commence toujours à 0). A titre d’exemple, pour récupérer les résultats 16 à 25 il faudrait donc utiliser: LIMIT 10 OFFSET 15
+
+A noter : Utiliser OFFSET 0 reviens au même que d’omettre l’OFFSET.
 
 # SQL INSERT INTO
 
