@@ -50,7 +50,7 @@
 
 ## Requêtes imbriquées
 
-1. SELECT titre, annee, film.genre FROM film 
+1. SELECT titre, annee, film.genre FROM film
 INNER JOIN (SELECT genre FROM film WHERE titre LIKE 'Matrix') AS genrematrix ON film.genre = genrematrix.genre;
 2. SELECT nom, prenom FROM artiste WHERE idartiste IN (SELECT idmes FROM film);
 3. SELECT nom, prenom FROM notation INNER JOIN internaute ON internaute.email = notation.email WHERE idfilm IN (SELECT idfilm FROM film WHERE titre LIKE 'Alien');
