@@ -328,6 +328,25 @@ Il existe plusieurs fonctions qui peuvent être utilisées pour manipuler plusie
 - **MIN()** pour récupérer la plus petite valeur. Utile par exemple pour connaître la date du premier achat d’un client
 - **SUM()** pour calculer la somme de plusieurs lignes. Permet par exemple de connaître le total de tous les achats d’un client
 
+# SQL LIMIT
+
+La clause LIMIT est à utiliser dans une requête SQL pour spécifier le nombre maximum de résultats que l’ont souhaite obtenir. Cette clause est souvent associé à un OFFSET, c’est-à-dire effectuer un décalage sur le jeu de résultat. Ces 2 clauses permettent par exemple d’effectuer des système de pagination (exemple : récupérer les 10 articles de la page 4).
+
+**ATTENTION** : selon le système de gestion de base de données, la syntaxe ne sera pas pareil. Ce tutoriel va donc présenter la syntaxe pour MySQL et pour PostgreSQL.
+Syntaxe simple
+
+La syntaxe commune aux principales système de gestion de bases de données est la suivante :
+
+``` sql
+SELECT *
+FROM table
+LIMIT 10
+```
+
+Cette requête permet de récupérer seulement les 10 premiers résultats d’une table. Bien entendu, si la table contient moins de 10 résultats, alors la requête retournera toutes les lignes.
+
+Bon à savoir : la bonne pratique lorsque l’ont utilise LIMIT consiste à utiliser également la clause ORDER BY pour s’assurer que quoi qu’il en soit ce sont toujours les bonnes données qui sont présentées. En effet, si le système de tri est non spécifié, alors il est en principe inconnu et les résultats peuvent être imprévisible.
+
 # SQL INSERT INTO
 
 L’insertion de données dans une table s’effectue à l’aide de la commande INSERT INTO. Cette commande permet au choix d’inclure une seule ligne à la base existante ou plusieurs lignes d’un coup.
