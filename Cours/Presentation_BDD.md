@@ -21,7 +21,22 @@
 
 ## Définitions (3/3)
 
-> Une **base de données** est un ensemble de données qui sont stockées sur un support informatique, et structurées de manière à pouvoir facilement consulter et modifier leur contenu.
+> Une **base de données** est un ensemble de données qui sont stockées sur un support informatique, et structurées de manière à faciliter l'exploitation (ajout, mise à jour, recherche de données).
+> Une **base de données** est une collection de données persistentes et pertinentes utilisées par des systèmes d'application de certaines organisations.
+
+## Avantages d'utilisation d'une base de données par rapport à un système traditionnels (fichiers)
+
+* **Compacité** : plus besoin de fichier manuel volumineux, fiche cartonnées ou le risque de perte d'informations est importants
+* **rapidité** : recherche et mise à jour rapide d'information
+* **données integrées** : regroupement de plusieurs fichiers de données ou toute redondance a été supprimé. D'où la diminution de l'incohérence.
+* **données partagées** : Les différents utilisateurs peuvent faire usage de ces données pour des buts divers. ils peuvent également accéder aux mêmes données simultanément.
+
+## Niveau de représentaion des données
+Trois niveaux sont proposés pour l'architecture d'une base de données :
+
+* le niveau conceptuel
+* le niveau externe
+* le niveau interne
 
 ## SGBD
 
