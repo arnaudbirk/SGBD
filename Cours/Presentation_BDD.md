@@ -1,3 +1,5 @@
+# Base de données
+
 ## Objectifs
 
 * Savoir ce qu'est une base de données, un SGBD, un SGBDR, comment y sont représentées les données
@@ -5,7 +7,7 @@
 * Etre capable de modéliser un problème en utilisant le formalisme UML
 * Savoir ce qu'est le language SQL et à quoi il sert
 
-# Les bases de données
+## Les bases de données
 
 ## Définitions (1/3)
 
@@ -32,23 +34,118 @@
 * **données partagées** : Les différents utilisateurs peuvent faire usage de ces données pour des buts divers. ils peuvent également accéder aux mêmes données simultanément.
 
 ## Niveau de représentaion des données
+
 Trois niveaux sont proposés pour l'architecture d'une base de données :
 
 * le niveau conceptuel
 * le niveau externe
 * le niveau interne
 
+![schema BDD](img/shema_bdd.jpg)
+
+### Le niveau conceptuel
+
+Le schéma conceptuel est la « charpente » d'une base de données. Il décrit en termes abstraits la réalité organisationnelle et ses règles de gestion. En effet, ce schéma est le résultat du processus de conception qui consiste à traduire les objets du monde réel en classes d'objets suivant des modèles de données bien définis.
+
+Il existe plusieurs types de modèles de données classés en trois catégories :
+
+* Les modèles de 1ère génération (décennie 60) : Hiérarchique et Réseau
+* Les modèles de 2ème génération (décennies 70 et 80) : E/A(Entités/Association), Relationnel...
+* Les modèles de 3ème génération (décennie 90): Modèle orienté objet
+
+### Le niveau externe
+
+Un schéma externe appelé aussi Vue est une perception des données par un programme d'application. C'est un Sous-schéma du schéma conceptuel.
+Il peut contenir des informations complémentaires (par exemple des informations de calcul).
+
+### Le niveau interne
+
+C'est le niveau relatif à la mémoire physique. Il concerne la manière selon laquelle les données sont réellement stockées, il correspond au schéma interne.
+
+> **Remarque** :
+Le processus de développement d'une BD comprend deux grandes phases :
+
+* Une phase de conception dont le résultat est le schéma conceptuel. La validation s'effectue à travers les schémas externes
+* Une phase de réalisation dont le résultat est le schéma interne et la base de données.
+
 ## SGBD
 
 * **SGBD** : Système de Gestion de Base de Données
 
 > Le SGBD est le logiciel destiné au stockage et à la manipulation de bases de données.
+C'est le logiciel qui prend en charge tous les accès à la BD.
 
-## Pourquoi un SGBD ?
+> Un système de gestion de base de données (SGBD) est un ensemble de programmes qui permet la gestion et l'accès à une base de données. Il héberge généralement plusieurs bases
+de données, qui sont destinées à des logiciels ou des thématiques différentes.
 
-* Accès disques fréquents et *lents*
-* Actions aboutissant à des incohérences
-* SGBD => chaque utilisateur a l'impression d'être le seul à travailler sur le système
+## Objectifs d'un SGBD
+
+Un SGBD dispose généralement d'un certains nombre d'objectifs
+
+### 1 - Définition des données
+  
+permet de définir les données (schémas externes, schéma conceptuel, schéma interne et tous les liens correspondants) sous une forme non compilée et de les convertir dans la forme objet appropriée. Le SGBD doit donc être muni d'un langage de définition de données (LDD).
+
+### 2 - Manipulation de données
+  
+Permet de traiter les requêtes de l'utilisateur pour interroger, modifier, supprimer ou insérer de nouvelles données.
+Le SGBD doit être muni d'un langage de manipulation de données (LMD).
+
+**Exemple**
+SQL est un langage à la fois LDD et LMD
+
+### 3 - Non redondance
+
+Le schéma conceptuel de données constitue une représentation globale des informations selon un modèle de données. Par conséquent, la conception intégrée de la BD grâce à cette notion de schéma de données pour un ensemble d'applications, évite les redondances constatées dans les SGF.
+
+### 4 - Cohérence
+
+Les données de la BD obéissent à des règles appelées contraintes d'intégrité (CI).
+Une CI est une assertion que doit vérifier le SGBD à chaque fois que la donnée sur laquelle elle est définie est sollicitée (déchargement de l'utilisateur lors des opération de création, modification, suppression).
+
+### 5 -  Efficacité des accès aux données
+
+Les accès aux données seront plus efficaces que dans les système de gestion de fichier grâce notamment :
+
+* au développement d'index sophistiqués
+* à l'existence de plusieurs chemins d'accès à une donnée
+* à l'existence de techniques d'optimisation de requêtes qui sélectionnent le chemin optimal à une donnée.
+  
+### 6 - Administration centralisée
+
+C'est le rôle de l'administrateur de la BD qui a pour fonction de :
+
+* Définir des structures de stockage,
+* Définir des structures de données,
+* Assurer le suivi et le contrôle de leur évolution.
+
+### 7 -  Indépendance physique
+
+Permet à l'administrateur de la BD de modifier l'organisation physique des données (par ajout
+d'index, par exemple) sans modification des programmes d'application déjà existants.
+
+### 8 - Indépendance logique
+
+permet de modifier le schéma conceptuel (ajouter de nouveaux attributs, de nouvelles classes d'objets,...) sans modifier les programmes d'applications.
+
+### 9 -  Partageabilité
+
+Le SGBD doit permettre à plusieurs applications de partager les données. Pour cela, il doit gérer les conflits d'accès (les détecter et les solutionner) . C'est le rôle du module de gestion des accès concurrents.
+
+### 10 - Sécurité et confidentialité
+
+Les données doivent être protégées contre les pannes et contre les accès mal intentionnés.
+
+* Protection contre les pannes : On distingue deux types de pannes
+  * Pannes simples caractérisées par la perte du contenu de la mémoire centrale
+  * Pannes graves caractérisée par la perte du contenu des mémoires secondaires
+  Dans les deux cas, il est possible de récupérer un état cohérent des données grâce à l'existence et à la gestion de journaux qui gardent la trace des exécutions antérieures.
+* Protection contre les accès mal intentionnés : La définition de droits d'accès, de mots de passe... gérés par le SGBD permet d'assurer la confidentialité des données de la base.
+
+**Exemple** :
+
+* spécialité pour valeur ('IT', 'G', 'MASTER')
+* une note est comprise entre 0 et 20
 
 ## Acteurs des SGBD
 
@@ -57,17 +154,6 @@ Trois niveaux sont proposés pour l'architecture d'une base de données :
   * Programmeur
   * Utilisateur avec outil informatique
   * Utilisateur sans outil informatique
-
-## Fonctionnalités d'un SGBD
-
-* Fonctionnalités attendues :
-  * indépendances données / applications
-  * consultation et modification des données
-  * définition des schémas de données
-  * stockage sur un support physique
-  * sécurisation des accès
-  * résolution des problèmes d'accès multiples
-  * reprises sur incident
 
 ## Notion de transation
 
@@ -339,12 +425,9 @@ Exercice - clés primaire et étrangères
   * outils ?
   * méthodologie ?
   * ... ?
-
-## Problématique
-
-* [x] décrire une relation (*Relation(Colonne1, Colonne2...)*)
-* [x] décrire un domaine de manière textuelle (*Colonne1 est de type entier, la valeur doit être multiple de 3...*)
-* [ ] le faire pour un ensemble de tables de manière concise
+* décrire une relation (*Relation(Colonne1, Colonne2...)*)
+* décrire un domaine de manière textuelle (*Colonne1 est de type entier, la valeur doit être multiple de 3...*)
+* le faire pour un ensemble de tables de manière concise
 
 ## Présentation d'UML (1/2)
 
@@ -368,7 +451,7 @@ Exercice - clés primaire et étrangères
 * Syntaxe pour une colonne : `nom_colonne: type(longueur)`
 * Contraintes particulières sur une colonne ajoutées sous forme de notes
 
-## Exemple
+### Exemple
 
 ![Diagramme UML de BDD](img/diag_ville_personne.png)
 
