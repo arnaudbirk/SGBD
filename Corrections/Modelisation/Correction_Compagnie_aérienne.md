@@ -1,3 +1,3 @@
 ## Correction - Compagnie Aérienne
 
-  ![Compagnie aérienne](Modelisation/img/compagnie.png)
+  ![Compagnie aérienne](img/compagnie.png)
