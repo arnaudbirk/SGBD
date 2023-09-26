@@ -42,7 +42,7 @@ Les requêtes suivantes peuvent s’exprimer avec une imbrication des clauses SE
 deux versions.
 
 1. Donnez le titre et année des films qui ont le même genre que Matrix.
-2. Donnez les nom et prénom des acteurs qui ont mis en scène un film.
+2. Donnez les noms et prénoms des artistes qui ont mis en scène un film.
 3. Donnez le nom des internautes qui ont noté le film Alien. Donnez ensuite également la note.
 
 ## Négation
