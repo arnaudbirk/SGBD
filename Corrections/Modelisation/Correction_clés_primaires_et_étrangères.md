@@ -16,9 +16,9 @@
 
   2.
 
-  ![Lien Personne Ville](Modelisation/img/personne_ville.png)
+  ![Lien Personne Ville](img/personne_ville.png)
 
   3.
 
-  ![Lien Personne Logement](Modelisation/img/logement_ville.png)
+  ![Lien Personne Logement](img/logement_ville.png)
 
